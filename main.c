@@ -3,9 +3,9 @@
 
 const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
-int rock_x = 15;
-int rock_y = 580;
-
+int bullet_x = 10;
+int bullet_y = 590;
+BOOL shot = FALSE;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -31,20 +31,25 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     650
                     );
 
-            RECT draw_rocket;
+            RECT draw_turret;
 
-            draw_rocket.left = rock_x;
-            draw_rocket.top = rock_y;
-            draw_rocket.right = rock_x + 20;
-            draw_rocket.bottom = rock_y + 40;
+            draw_turret.left = ship_x + 15;
+            draw_turret.right = ship_x + 35;
 
             Rectangle(
                     device,
-                    100,
-                    200,
-                    200,
-                    600
+                    draw_turret.left,
+                    590,
+                    draw_turret.right,
+                    610
                     );
+            if (shot == TRUE){
+                RECT draw_bullet;
+
+                draw_bullet.left = bullet_x;
+                draw_bullet.top = bullet_y;
+            }
+
 
 
             EndPaint(hwnd, &ctx);

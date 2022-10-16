@@ -36,3 +36,5 @@
 /.idea/modules.xml
 /.idea/QRSpaceInvader.iml
 /.idea/vcs.xml
+/cmake-build-debug/CMakeFiles/QR_invader.dir/main.c.obj
+/cmake-build-debug/QR_invader.exe
