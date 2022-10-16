@@ -3,7 +3,7 @@
 
 const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
-int bullet_y = 590;
+int shot_y = 590;
 BOOL shot = FALSE;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -42,7 +42,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     draw_turret.right,
                     610
             );
+            RECT draw_shot;
 
+            draw_shot.left = 15;
+            draw_shot.top = shot_y;
+
+            Rectangle(
+                    device,
+                    draw_shot.left,
+                    draw_shot.top,
+                    draw_shot.left + 20,
+                    draw_shot.top + 20
+                    );
+
+            printf("%d", shot_y);
             EndPaint(hwnd, &ctx);
 
             break;
@@ -50,20 +63,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         case WM_KEYDOWN:
             if (GetAsyncKeyState(VK_LEFT)){
                 ship_x = ship_x - 20;
-                if (ship_x < 0){
+                if (ship_x < -30){
                     ship_x = 450;
                 }
                 InvalidateRect(hwnd, 0, 1);
             } else if (GetAsyncKeyState(VK_RIGHT)){
                 ship_x = ship_x + 20;
                 if (ship_x > 450){
-                    ship_x = 0;
+                    ship_x = -30;
                 }
                 InvalidateRect(hwnd, 0, 1);
             } else if (GetAsyncKeyState(VK_SPACE)){
-                Sleep(1);
                 shot = TRUE;
                 InvalidateRect(hwnd, 0, 1);
+
             }
 
             break;
