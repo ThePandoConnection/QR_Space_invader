@@ -30,3 +30,9 @@
 /cmake-build-debug/CMakeFiles/TargetDirectories.txt
 /cmake-build-debug/.cmake/api/v1/query/toolchains-v1
 /cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-4b3d98257768d7b3d977.json
+/.idea/.gitignore
+/.idea/.name
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/QRSpaceInvader.iml
+/.idea/vcs.xml
