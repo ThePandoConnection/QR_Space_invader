@@ -17,7 +17,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="added turret and working on shooting mechanism" />
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="added turret and working on shooting mechanism">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,22 +46,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/Ollie Lewis/CLionProjects/MATTKCQRSNAKE"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ollie Lewis/CLionProjects/MATTKCQRSNAKE&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="QR_invader" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="QR_invader" TARGET_NAME="QR_invader" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QR_invader" RUN_TARGET_NAME="QR_invader">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -73,7 +72,10 @@
       <option name="presentableId" value="Default" />
       <updated>1665920079727</updated>
       <workItem from="1665920081702" duration="56000" />
-      <workItem from="1665920340254" duration="1049000" />
+      <workItem from="1665920340254" duration="1118000" />
+      <workItem from="1665928433411" duration="1280000" />
+      <workItem from="1665930535952" duration="15000" />
+      <workItem from="1665930862232" duration="1278000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>

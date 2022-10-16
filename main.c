@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <stdio.h>
 
 const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
@@ -86,14 +85,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-                   LPSTR lpCmdLine, int nCmdShow)
+int main()
 {
+
+    HMODULE hInstance = GetModuleHandleA(NULL);
+
     WNDCLASSEX wc;
     HWND hwnd;
     MSG Msg;
 
-    //Step 1: Registering the Window Class
     wc.cbSize        = sizeof(WNDCLASSEX);
     wc.style         = 0;
     wc.lpfnWndProc   = WndProc;
@@ -130,7 +130,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         return 0; //can remove to decrease code size
     }
 
-    ShowWindow(hwnd, nCmdShow);
+    //ShowWindow(hwnd, SW_SHOW);
 
 
     // Step 3: The Message Loop
