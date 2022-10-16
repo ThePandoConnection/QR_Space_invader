@@ -2,7 +2,9 @@
 #include <stdio.h>
 
 const char g_szClassName[] = "myWindowClass";
-int shooter_x = 10;
+int ship_x = 10;
+int rock_x = 15;
+int rock_y = 580;
 
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -16,33 +18,50 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
             SelectObject(device, GetStockObject(NULL_PEN));
 
-            RECT draw_rect;
+            RECT draw_ship;
 
-            draw_rect.left = shooter_x;
-            draw_rect.right = shooter_x +50;
+            draw_ship.left = ship_x;
+            draw_ship.right = ship_x +50;
 
             Rectangle(
                     device,
-                    draw_rect.left,
+                    draw_ship.left,
                     600,
-                    draw_rect.right,
+                    draw_ship.right,
                     650
                     );
 
+            RECT draw_rocket;
+
+            draw_rocket.left = rock_x;
+            draw_rocket.top = rock_y;
+            draw_rocket.right = rock_x + 20;
+            draw_rocket.bottom = rock_y + 40;
+
+            Rectangle(
+                    device,
+                    100,
+                    200,
+                    200,
+                    600
+                    );
+
+
             EndPaint(hwnd, &ctx);
+
             break;
         }
         case WM_KEYDOWN:
             if (GetAsyncKeyState(VK_LEFT)){
-                shooter_x = shooter_x - 20;
-                if (shooter_x < 0){
-                    shooter_x = 450;
+                ship_x = ship_x - 20;
+                if (ship_x < 0){
+                    ship_x = 450;
                 }
                 InvalidateRect(hwnd, 0, 1);
             } else if (GetAsyncKeyState(VK_RIGHT)){
-                shooter_x = shooter_x + 20;
-                if (shooter_x > 450){
-                    shooter_x = 0;
+                ship_x = ship_x + 20;
+                if (ship_x > 450){
+                    ship_x = 0;
                 }
                 InvalidateRect(hwnd, 0, 1);
             } else if (GetAsyncKeyState(VK_SPACE)){
@@ -94,7 +113,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     hwnd = CreateWindowEx(
             WS_EX_CLIENTEDGE,
             g_szClassName,
-            "Space Invader",
+            "QR Invader",
             WS_VISIBLE+WS_OVERLAPPEDWINDOW-WS_THICKFRAME-WS_MAXIMIZEBOX,
             CW_USEDEFAULT, CW_USEDEFAULT, 450, 650,
             NULL, NULL, hInstance, NULL);
