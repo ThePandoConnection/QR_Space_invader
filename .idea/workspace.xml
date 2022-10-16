@@ -17,10 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="added turret and working on shooting mechanism">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="still working on shot mechanic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +75,7 @@
       <workItem from="1665930862232" duration="7417000" />
       <workItem from="1665941940073" duration="379000" />
       <workItem from="1665942332600" duration="68000" />
-      <workItem from="1665949917974" duration="3627000" />
+      <workItem from="1665949917974" duration="3838000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -108,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665949925762</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="still working on shot mechanic">
+      <created>1665953766982</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665953766982</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added turret and working on shooting mechanism" />
-    <option name="LAST_COMMIT_MESSAGE" value="added turret and working on shooting mechanism" />
+    <MESSAGE value="still working on shot mechanic" />
+    <option name="LAST_COMMIT_MESSAGE" value="still working on shot mechanic" />
   </component>
 </project>
