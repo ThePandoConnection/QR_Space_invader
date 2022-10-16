@@ -1,8 +1,8 @@
 #include <windows.h>
+#include <stdio.h>
 
 const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
-int bullet_x = 10;
 int bullet_y = 590;
 BOOL shot = FALSE;
 
@@ -10,7 +10,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     switch(msg)
     {
-        case WM_PAINT:{
+        case WM_PAINT: {
             PAINTSTRUCT ctx;
 
             HDC device = BeginPaint(hwnd, &ctx);
@@ -20,7 +20,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             RECT draw_ship;
 
             draw_ship.left = ship_x;
-            draw_ship.right = ship_x +50;
+            draw_ship.right = ship_x + 50;
 
             Rectangle(
                     device,
@@ -28,7 +28,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     600,
                     draw_ship.right,
                     650
-                    );
+            );
 
             RECT draw_turret;
 
@@ -41,15 +41,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     590,
                     draw_turret.right,
                     610
-                    );
-            if (shot == TRUE){
-                RECT draw_bullet;
-
-                draw_bullet.left = bullet_x;
-                draw_bullet.top = bullet_y;
-            }
-
-
+            );
 
             EndPaint(hwnd, &ctx);
 
@@ -69,7 +61,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                 }
                 InvalidateRect(hwnd, 0, 1);
             } else if (GetAsyncKeyState(VK_SPACE)){
-
+                Sleep(1);
+                shot = TRUE;
+                InvalidateRect(hwnd, 0, 1);
             }
 
             break;
