@@ -17,7 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="still working on shot mechanic">
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="shot mechanic implemented, shot follows ship if it moves, but I like the quirk I'm going to keep it in.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -81,7 +81,7 @@
       <workItem from="1665949917974" duration="3838000" />
       <workItem from="1666001574475" duration="1182000" />
       <workItem from="1666003437677" duration="3647000" />
-      <workItem from="1666013512590" duration="1000" />
+      <workItem from="1666013512590" duration="2134000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665953766982</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="shot mechanic implemented, shot follows ship if it moves, but I like the quirk I'm going to keep it in.">
+      <created>1666013722425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666013722425</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added turret and working on shooting mechanism" />
     <MESSAGE value="still working on shot mechanic" />
-    <option name="LAST_COMMIT_MESSAGE" value="still working on shot mechanic" />
+    <MESSAGE value="shot mechanic implemented, shot follows ship if it moves, but I like the quirk I'm going to keep it in." />
+    <option name="LAST_COMMIT_MESSAGE" value="shot mechanic implemented, shot follows ship if it moves, but I like the quirk I'm going to keep it in." />
   </component>
 </project>

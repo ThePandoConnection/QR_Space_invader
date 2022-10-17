@@ -5,6 +5,7 @@ const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
 int shot_y = 590;
 BOOL shot = FALSE;
+BOOL start = FALSE;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -57,6 +58,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         draw_shot.top + 20
                 );
             }
+            if (start == TRUE){
+                for (int i=0; i < 7; i++){
+                    for (int j=0; j < 5; j++){
+                        Rectangle(
+                                device,
+                                i*50 + 20,
+                                j*50 + 20,
+                                i*50 + 40,
+                                j*50 + 40
+                                );
+                    }
+                }
+            }
 
 
             EndPaint(hwnd, &ctx);
@@ -81,19 +95,32 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                 shot = TRUE;
                 InvalidateRect(hwnd, 0, 1);
 
+            } else if(GetAsyncKeyState(0x53)){
+                start = TRUE;
+                InvalidateRect(hwnd, 0, 1);
             }
 
             break;
         case WM_TIMER:
-            if (shot == TRUE){
-                shot_y = shot_y - 10;
-                InvalidateRect(hwnd, 0, 1);
 
+            switch(wParam)
+            {
+                case 0:
+                    if (shot == TRUE){
+                        shot_y = shot_y - 10;
+                        InvalidateRect(hwnd, 0, 1);
+
+                    }
+                    if (shot_y < 20){
+                        shot_y = 590;
+                        shot = FALSE;
+                    }
+                case 1:
+                    if (start == TRUE){
+
+                    }
             }
-            if (shot_y < 20){
-                shot_y = 590;
-                shot = FALSE;
-            }
+
             break;
         case WM_CLOSE:
             DestroyWindow(hwnd);
@@ -155,6 +182,7 @@ int main()
     //ShowWindow(hwnd, SW_SHOW);
 
     SetTimer(hwnd, 0, 15, 0);
+    SetTimer(hwnd, 1, 15, 0);
 
     // Step 3: The Message Loop
     while(GetMessage(&Msg, NULL, 0, 0) > 0)
