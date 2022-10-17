@@ -42,20 +42,23 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     draw_turret.right,
                     610
             );
-            RECT draw_shot;
+            if (shot == TRUE){
+                RECT draw_shot;
 
-            draw_shot.left = 15;
-            draw_shot.top = shot_y;
+                draw_shot.left = draw_turret.left;
+                draw_shot.top = shot_y;
 
-            Rectangle(
-                    device,
-                    draw_shot.left,
-                    draw_shot.top,
-                    draw_shot.left + 20,
-                    draw_shot.top + 20
-                    );
 
-            printf("%d", shot_y);
+                Rectangle(
+                        device,
+                        draw_shot.left,
+                        draw_shot.top,
+                        draw_shot.left + 20,
+                        draw_shot.top + 20
+                );
+            }
+
+
             EndPaint(hwnd, &ctx);
 
             break;
@@ -73,12 +76,24 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     ship_x = -30;
                 }
                 InvalidateRect(hwnd, 0, 1);
+
             } else if (GetAsyncKeyState(VK_SPACE)){
                 shot = TRUE;
                 InvalidateRect(hwnd, 0, 1);
 
             }
 
+            break;
+        case WM_TIMER:
+            if (shot == TRUE){
+                shot_y = shot_y - 10;
+                InvalidateRect(hwnd, 0, 1);
+
+            }
+            if (shot_y < 20){
+                shot_y = 590;
+                shot = FALSE;
+            }
             break;
         case WM_CLOSE:
             DestroyWindow(hwnd);
@@ -139,6 +154,7 @@ int main()
 
     //ShowWindow(hwnd, SW_SHOW);
 
+    SetTimer(hwnd, 0, 15, 0);
 
     // Step 3: The Message Loop
     while(GetMessage(&Msg, NULL, 0, 0) > 0)
