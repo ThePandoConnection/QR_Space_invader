@@ -9,8 +9,10 @@ struct Position{
 const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
 int shot_y = 590;
+int alien_x = 0;
+int alien_y = 0;
+int direction = 0;
 struct Position deadAliens[35];
-
 BOOL shot = FALSE;
 BOOL start = FALSE;
 
@@ -80,7 +82,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             struct Position dead;
             if (start == TRUE){
                 for (int i=1; i < 8; i++){
-                    for (int j=1; j < 6; j++){
+                    for (int j=1; j < 5; j++){
                         dead.x = i;
                         dead.y = j;
 
@@ -89,10 +91,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         } else {
                             Rectangle(
                                     device,
-                                    i*50 + 20,
-                                    j*50 + 20,
-                                    i*50 + 40,
-                                    j*50 + 40
+                                    i*50 + alien_x,
+                                    j*50 + alien_y,
+                                    i*50 + alien_x + 20,
+                                    j*50 + alien_y + 20
                             );
                         }
 
@@ -146,7 +148,17 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     }
                 case 1:
                     if (start == TRUE){
-
+                        if (alien_x >= 60){
+                            direction = 1;
+                        } else if (alien_x <= -30){
+                            direction = 0;
+                        }
+                        if (direction == 0){
+                            alien_x = alien_x + 1;
+                        } else if (direction == 1) {
+                            alien_x = alien_x - 1;
+                        }
+                        InvalidateRect(hwnd, 0, 1);
                     }
             }
 
@@ -211,7 +223,7 @@ int main()
     //ShowWindow(hwnd, SW_SHOW);
 
     SetTimer(hwnd, 0, 15, 0);
-    SetTimer(hwnd, 1, 15, 0);
+    SetTimer(hwnd, 1, 200, 0);
 
     // Step 3: The Message Loop
     while(GetMessage(&Msg, NULL, 0, 0) > 0)
