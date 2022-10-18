@@ -1,11 +1,30 @@
 #include <windows.h>
 #include <stdio.h>
 
+struct Position{
+    int x;
+    int y;
+};
+
 const char g_szClassName[] = "myWindowClass";
 int ship_x = 10;
 int shot_y = 590;
+struct Position deadAliens[35];
+
 BOOL shot = FALSE;
 BOOL start = FALSE;
+
+BOOL AlienDead(struct Position dead){
+        for (int i=0; i<36; i++) {
+            if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
+                printf("%d",deadAliens[i].x);
+                return TRUE;
+            }
+            else {
+                return FALSE;
+            }
+        }
+}
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -58,16 +77,26 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         draw_shot.top + 20
                 );
             }
+            struct Position dead;
             if (start == TRUE){
-                for (int i=0; i < 7; i++){
-                    for (int j=0; j < 5; j++){
-                        Rectangle(
-                                device,
-                                i*50 + 20,
-                                j*50 + 20,
-                                i*50 + 40,
-                                j*50 + 40
-                                );
+                for (int i=1; i < 8; i++){
+                    for (int j=1; j < 6; j++){
+                        dead.x = i;
+                        dead.y = j;
+
+                        if(AlienDead(dead)){
+                            printf("test");
+                        } else {
+                            Rectangle(
+                                    device,
+                                    i*50 + 20,
+                                    j*50 + 20,
+                                    i*50 + 40,
+                                    j*50 + 40
+                            );
+                        }
+
+
                     }
                 }
             }
