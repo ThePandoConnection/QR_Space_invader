@@ -64,13 +64,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     draw_turret.right,
                     610
             );
+            RECT draw_shot;
+
+            draw_shot.left = draw_turret.left;
+            draw_shot.top = shot_y;
+
             if (shot == TRUE){
-                RECT draw_shot;
-
-                draw_shot.left = draw_turret.left;
-                draw_shot.top = shot_y;
-
-
                 Rectangle(
                         device,
                         draw_shot.left,
@@ -83,18 +82,24 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             if (start == TRUE){
                 for (int i=1; i < 8; i++){
                     for (int j=1; j < 5; j++){
+                        int left = i*50 + alien_x;
+                        int top = j*50 + alien_y;
+                        int right = i*50 + alien_x + 20;
+                        int bottom = j*50 + alien_y + 20;
                         dead.x = i;
                         dead.y = j;
-
+                        if (((top-draw_shot.top)*(bottom-draw_shot.bottom) <= 0) && ((left - draw_shot.left)*(right - draw_shot.right) <= 0)){ //rough idea for hit check, not currently working
+                                printf("test");//seems to detect x-axis correctly but not y will look into it
+                        }//will need to add code to stop shot if hit successful maybe just bool?
                         if(AlienDead(dead)){
                             printf("test");
                         } else {
                             Rectangle(
                                     device,
-                                    i*50 + alien_x,
-                                    j*50 + alien_y,
-                                    i*50 + alien_x + 20,
-                                    j*50 + alien_y + 20
+                                    left,
+                                    top,
+                                    right,
+                                    bottom
                             );
                         }
 
