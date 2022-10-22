@@ -97,7 +97,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
                             printf("test");
                         }
-                                //seems to detect x-axis correctly but not y will look into it
                         //will need to add code to stop shot if hit successful maybe just bool?
                         if(AlienDead(dead)){
                         } else {
