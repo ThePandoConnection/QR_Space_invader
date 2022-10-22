@@ -17,7 +17,7 @@ BOOL shot = FALSE;
 BOOL start = FALSE;
 
 BOOL AlienDead(struct Position dead){
-        for (int i=0; i<36; i++) {
+        for (int i=0; i < 36; i++) {
             if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
                 printf("%d",deadAliens[i].x);
                 return TRUE;
@@ -78,6 +78,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         draw_shot.top + 20
                 );
             }
+
+            struct Position shot_middle;
+
+            shot_middle.x = (draw_shot.left + draw_shot.left + 20)/2;
+            shot_middle.y = (draw_shot.top + draw_shot.top + 20)/2;
+
             struct Position dead;
             if (start == TRUE){
                 for (int i=1; i < 8; i++){
@@ -88,11 +94,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         int bottom = j*50 + alien_y + 20;
                         dead.x = i;
                         dead.y = j;
-                        if (((top-draw_shot.top)*(bottom-draw_shot.bottom) <= 0) && ((left - draw_shot.left)*(right - draw_shot.right) <= 0)){ //rough idea for hit check, not currently working
-                                printf("test");//seems to detect x-axis correctly but not y will look into it
-                        }//will need to add code to stop shot if hit successful maybe just bool?
-                        if(AlienDead(dead)){
+                        if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
                             printf("test");
+                        }
+                                //seems to detect x-axis correctly but not y will look into it
+                        //will need to add code to stop shot if hit successful maybe just bool?
+                        if(AlienDead(dead)){
                         } else {
                             Rectangle(
                                     device,
