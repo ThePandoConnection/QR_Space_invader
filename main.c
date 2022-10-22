@@ -17,14 +17,20 @@ BOOL shot = FALSE;
 BOOL start = FALSE;
 
 BOOL AlienDead(struct Position dead){
-        for (int i=0; i < 36; i++) {
+        BOOL check = FALSE;
+        for (int i=0; i < sizeof(deadAliens); i++) {
             if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
                 printf("%d",deadAliens[i].x);
-                return TRUE;
+                check = TRUE;
             }
             else {
-                return FALSE;
+                check = FALSE;
             }
+        }
+        if (check == FALSE){
+            return FALSE;
+        } else {
+            return TRUE;
         }
 }
 
@@ -94,11 +100,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         int bottom = j*50 + alien_y + 20;
                         dead.x = i;
                         dead.y = j;
-                        if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
-                            printf("test");
-                        }
                         //will need to add code to stop shot if hit successful maybe just bool?
                         if(AlienDead(dead)){
+
                         } else {
                             Rectangle(
                                     device,
@@ -107,6 +111,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                     right,
                                     bottom
                             );
+                        }
+                        if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
+                            printf("test");
                         }
 
 
