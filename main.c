@@ -72,7 +72,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             );
             RECT draw_shot;
 
-            draw_shot.left = draw_turret.left;
+            draw_shot.left = draw_turret.left + 5;
             draw_shot.top = shot_y;
 
             if (shot == TRUE){
@@ -80,8 +80,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         device,
                         draw_shot.left,
                         draw_shot.top,
-                        draw_shot.left + 20,
-                        draw_shot.top + 20
+                        draw_shot.left + 10,
+                        draw_shot.top + 10
                 );
             }
 
@@ -114,6 +114,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         }
                         if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
                             printf("test");
+                            shot = FALSE;
+                            shot_y = 590;
                         }
 
 

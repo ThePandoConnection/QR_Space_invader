@@ -17,7 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="got collision working, need to cancel shot and hide aliens then all done">
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="fixed potential issue with BOOL AlienDead where it would loop forever.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -87,7 +87,8 @@
       <workItem from="1666114440819" duration="2219000" />
       <workItem from="1666119923956" duration="1890000" />
       <workItem from="1666360506948" duration="1609000" />
-      <workItem from="1666433756285" duration="2346000" />
+      <workItem from="1666433756285" duration="2994000" />
+      <workItem from="1666523463629" duration="2150000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -173,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666434836453</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed potential issue with BOOL AlienDead where it would loop forever.">
+      <created>1666436448380</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666436448380</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +207,7 @@
     <MESSAGE value="added x movement to aliens, y is simple to add, need to work on score and hit detection. Otherwise, it's almost finished. will check compile size after this commit" />
     <MESSAGE value="started on the collision, not the cleanest but should work, see comments for info" />
     <MESSAGE value="got collision working, need to cancel shot and hide aliens then all done" />
-    <option name="LAST_COMMIT_MESSAGE" value="got collision working, need to cancel shot and hide aliens then all done" />
+    <MESSAGE value="fixed potential issue with BOOL AlienDead where it would loop forever." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed potential issue with BOOL AlienDead where it would loop forever." />
   </component>
 </project>
