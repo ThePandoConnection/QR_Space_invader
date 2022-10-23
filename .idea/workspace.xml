@@ -17,7 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="got aliens disappearing, issue with choosing index in array as currently based on x value, and when another alien in the same x is hit it replaces value rather than appending to array">
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -88,7 +88,8 @@
       <workItem from="1666119923956" duration="1890000" />
       <workItem from="1666360506948" duration="1609000" />
       <workItem from="1666433756285" duration="2994000" />
-      <workItem from="1666523463629" duration="6563000" />
+      <workItem from="1666523463629" duration="6794000" />
+      <workItem from="1666540343562" duration="2826000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -195,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666534117171</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included.">
+      <created>1666535275516</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666535275516</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included.">
+      <created>1666535289279</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1666535289279</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +238,7 @@
     <MESSAGE value="got collision working, need to cancel shot and hide aliens then all done" />
     <MESSAGE value="fixed potential issue with BOOL AlienDead where it would loop forever." />
     <MESSAGE value="got aliens disappearing, issue with choosing index in array as currently based on x value, and when another alien in the same x is hit it replaces value rather than appending to array" />
-    <option name="LAST_COMMIT_MESSAGE" value="got aliens disappearing, issue with choosing index in array as currently based on x value, and when another alien in the same x is hit it replaces value rather than appending to array" />
+    <MESSAGE value="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included." />
   </component>
 </project>

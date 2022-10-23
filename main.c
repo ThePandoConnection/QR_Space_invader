@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <stdio.h>
 
 struct Position{
     int x;
@@ -11,9 +12,23 @@ int shot_y = 590;
 int alien_x = 0;
 int alien_y = 0;
 int direction = 0;
+int score = 0;
 struct Position deadAliens[35] = {0};
 BOOL shot = FALSE;
 BOOL start = FALSE;
+
+void gameover(HWND hwnd){
+    KillTimer(hwnd, 0);
+    KillTimer(hwnd, 1);
+    char gameover_text[80];
+    sprintf(gameover_text, "Game Over! your score is: %f", score);
+    int id = MessageBox(NULL, gameover_text, "Game over!",
+               MB_ICONEXCLAMATION | MB_OK);
+    switch(id){
+        case IDOK:
+            DestroyWindow(hwnd);
+    }
+}
 
 BOOL AlienDead(struct Position dead){
         int check = 0;
@@ -91,6 +106,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         int bottom = j*50 + alien_y + 20;
                         dead.x = i;
                         dead.y = j;
+
                         if(AlienDead(dead)){
                             ;
                         } else {
@@ -101,6 +117,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                     right,
                                     bottom
                             );
+                            if (bottom >= 600){
+                                gameover(hwnd);
+                            }
                             if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
                                 int x = 0;
                                 while (deadAliens[x].x != 0){
@@ -108,6 +127,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                 }
                                 deadAliens[x].x = i;
                                 deadAliens[x].y = j;
+                                score = score + 10;
                                 shot = FALSE;
                                 shot_y = 590;
                             }
@@ -168,6 +188,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                             direction = 1;
                         } else if (alien_x <= -30){
                             direction = 0;
+                            alien_y = alien_y + 20;
+                            if (alien_y >= 400){
+                                gameover(hwnd);
+                            }
                         }
                         if (direction == 0){
                             alien_x = alien_x + 1;
