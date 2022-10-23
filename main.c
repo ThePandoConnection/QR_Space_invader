@@ -17,21 +17,15 @@ BOOL shot = FALSE;
 BOOL start = FALSE;
 
 BOOL AlienDead(struct Position dead){
-        BOOL check = FALSE;
+        int check = 0;
         for (int i=0; i < sizeof(deadAliens); i++) {
             if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
-                printf("%d",deadAliens[i].x);
-                check = TRUE;
-            }
-            else {
-                check = FALSE;
+                //printf("%d",deadAliens[i].x);
+                //printf("%d", deadAliens[i].y);
+                check = 1;
             }
         }
-        if (check == FALSE){
-            return FALSE;
-        } else {
-            return TRUE;
-        }
+        return check;
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -100,9 +94,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         int bottom = j*50 + alien_y + 20;
                         dead.x = i;
                         dead.y = j;
-                        //will need to add code to stop shot if hit successful maybe just bool?
+                        printf("%d", AlienDead(dead));
                         if(AlienDead(dead)){
-
+                            printf("test");
                         } else {
                             Rectangle(
                                     device,
@@ -111,12 +105,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                     right,
                                     bottom
                             );
+                            if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
+                                deadAliens[i].x = i;
+                                deadAliens[i].y = j;
+                                printf("test");
+                                shot = FALSE;
+                                shot_y = 590;
+                            }
                         }
-                        if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
-                            printf("test");
-                            shot = FALSE;
-                            shot_y = 590;
-                        }
+
 
 
                     }
