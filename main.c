@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <stdio.h>
 
 struct Position{
     int x;
@@ -20,7 +19,6 @@ BOOL AlienDead(struct Position dead){
         int check = 0;
         for (int i=0; i < 35; i++) {
             if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
-                printf("%d", dead.x);
                 check = 1;
             }
         }
