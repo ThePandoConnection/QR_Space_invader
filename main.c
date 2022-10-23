@@ -12,16 +12,15 @@ int shot_y = 590;
 int alien_x = 0;
 int alien_y = 0;
 int direction = 0;
-struct Position deadAliens[35];
+struct Position deadAliens[35] = {0};
 BOOL shot = FALSE;
 BOOL start = FALSE;
 
 BOOL AlienDead(struct Position dead){
         int check = 0;
-        for (int i=0; i < sizeof(deadAliens); i++) {
+        for (int i=0; i < 35; i++) {
             if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
-                //printf("%d",deadAliens[i].x);
-                //printf("%d", deadAliens[i].y);
+                printf("%d", dead.x);
                 check = 1;
             }
         }
@@ -94,9 +93,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         int bottom = j*50 + alien_y + 20;
                         dead.x = i;
                         dead.y = j;
-                        printf("%d", AlienDead(dead));
                         if(AlienDead(dead)){
-                            printf("test");
+                            ;
                         } else {
                             Rectangle(
                                     device,
@@ -106,9 +104,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                     bottom
                             );
                             if (shot_middle.x > left && shot_middle.x < right && shot_middle.y > top &&  shot_middle.y < bottom){
-                                deadAliens[i].x = i;
-                                deadAliens[i].y = j;
-                                printf("test");
+                                int x = 0;
+                                while (deadAliens[x].x != 0){
+                                    x += 1;
+                                }
+                                deadAliens[x].x = i;
+                                deadAliens[x].y = j;
                                 shot = FALSE;
                                 shot_y = 590;
                             }
