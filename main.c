@@ -1,5 +1,5 @@
 #include <windows.h>
-
+#include <stdio.h>
 struct Position{
     int x;
     int y;
@@ -11,8 +11,8 @@ int shot_y = 590;
 int alien_x = 0;
 int alien_y = 0;
 int direction = 0;
-int score = 0;
-struct Position deadAliens[35] = {0};
+int score = 10;
+struct Position deadAliens[28] = {0};
 BOOL shot = FALSE;
 BOOL start = FALSE;
 
@@ -29,7 +29,7 @@ void gameover(HWND hwnd){
 
 BOOL AlienDead(struct Position dead){
         int check = 0;
-        for (int i=0; i < 35; i++) {
+        for (int i=0; i < 28; i++) {
             if (dead.x == deadAliens[i].x && dead.y == deadAliens[i].y){
                 check = 1;
             }
@@ -137,6 +137,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                 }
                                 deadAliens[x].x = i;
                                 deadAliens[x].y = j;
+                                printf("%d", score);
+                                if (score % 280 == 0) {
+                                    alien_y = 0;
+                                    for (int k; k <28; k++){
+                                        deadAliens[k].x = 0;
+                                        deadAliens[k].y = 0;
+                                    }
+                                }
                                 score = score + 10;
                                 shot = FALSE;
                                 shot_y = 590;
@@ -199,9 +207,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         } else if (alien_x <= -30){
                             direction = 0;
                             alien_y = alien_y + 20;
-                            if (alien_y >= 400){
-                                gameover(hwnd);
-                            }
                         }
                         if (direction == 0){
                             alien_x = alien_x + 1;
