@@ -21,7 +21,7 @@ void gameover(HWND hwnd){
     KillTimer(hwnd, 0);
     KillTimer(hwnd, 1);
     char gameover_text[80];
-    sprintf(gameover_text, "Game Over! your score is: %f", score);
+    sprintf(gameover_text, "Game Over! your score is: %d", score);
     int id = MessageBox(NULL, gameover_text, "Game over!",
                MB_ICONEXCLAMATION | MB_OK);
     switch(id){
