@@ -17,8 +17,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="implemented a game over state with a window that pops up when the aliens touch the ship. technically finished, but needs buttoning up and cleaing.">
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,9 @@
       <workItem from="1666433756285" duration="2994000" />
       <workItem from="1666523463629" duration="6794000" />
       <workItem from="1666540343562" duration="3055000" />
-      <workItem from="1666610601822" duration="1000" />
+      <workItem from="1666610601822" duration="1166000" />
+      <workItem from="1666612475694" duration="22000" />
+      <workItem from="1666613641446" duration="1692000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -217,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666543412149</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit">
+      <created>1666611168987</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666611168987</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +257,7 @@
     <MESSAGE value="got aliens disappearing, issue with choosing index in array as currently based on x value, and when another alien in the same x is hit it replaces value rather than appending to array" />
     <MESSAGE value="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included." />
     <MESSAGE value="implemented a game over state with a window that pops up when the aliens touch the ship. technically finished, but needs buttoning up and cleaing." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented a game over state with a window that pops up when the aliens touch the ship. technically finished, but needs buttoning up and cleaing." />
+    <MESSAGE value="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit" />
+    <option name="LAST_COMMIT_MESSAGE" value="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit" />
   </component>
 </project>

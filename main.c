@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <stdio.h>
 
 struct Position{
     int x;
@@ -20,9 +19,7 @@ BOOL start = FALSE;
 void gameover(HWND hwnd){
     KillTimer(hwnd, 0);
     KillTimer(hwnd, 1);
-    char gameover_text[80];
-    sprintf(gameover_text, "Game Over! your score is: %d", score);
-    int id = MessageBox(NULL, gameover_text, "Game over!",
+    int id = MessageBox(NULL, "Game Over!", "Game Over!",
                MB_ICONEXCLAMATION | MB_OK);
     switch(id){
         case IDOK:
@@ -50,6 +47,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             HDC device = BeginPaint(hwnd, &ctx);
 
             SelectObject(device, GetStockObject(NULL_PEN));
+
+            RECT rect;
+            rect.left=10;
+            rect.top=10;
+            DrawText(device, "Score:", -1, &rect, DT_SINGLELINE | DT_NOCLIP  ) ;
+
+            wchar_t str[32];
+            itoa(score, str, 10);
+
+            RECT rect1;
+            rect1.left=60;
+            rect1.top=10;
+            DrawText(device, str, -1, &rect1, DT_SINGLELINE | DT_NOCLIP  ) ;
 
             RECT draw_ship;
 
@@ -215,6 +225,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
+//int _WinMainCRTStartup()
 int main()
 {
 
