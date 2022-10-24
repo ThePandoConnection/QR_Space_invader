@@ -11,10 +11,13 @@ int shot_y = 590;
 int alien_x = 0;
 int alien_y = 0;
 int direction = 0;
+int bomb_x = 0;
+int bomb_y = 0;
 int score = 10;
 struct Position deadAliens[28] = {0};
 BOOL shot = FALSE;
 BOOL start = FALSE;
+BOOL bomb = FALSE;
 
 void gameover(HWND hwnd){
     KillTimer(hwnd, 0);
@@ -51,7 +54,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             RECT rect;
             rect.left=10;
             rect.top=10;
-            DrawText(device, "Score:", -1, &rect, DT_SINGLELINE | DT_NOCLIP  ) ;
+            DrawText(device, "Score:", -1, &rect, DT_SINGLELINE | DT_NOCLIP  );
 
             char str[32];
             _itoa(score, str, 10);
@@ -59,7 +62,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             RECT rect1;
             rect1.left=60;
             rect1.top=10;
-            DrawText(device, str, -1, &rect1, DT_SINGLELINE | DT_NOCLIP  ) ;
+            DrawText(device, str, -1, &rect1, DT_SINGLELINE | DT_NOCLIP  );
 
             RECT draw_ship;
 
@@ -100,7 +103,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         draw_shot.top + 10
                 );
             }
+            RECT draw_bomb;
 
+            draw_bomb.left = bomb_x;
+            draw_bomb.top = bomb_y;
+
+            if (bomb == TRUE){
+                Rectangle(
+                        device,
+                        draw_bomb.left,
+                        draw_bomb.top,
+                        draw_bomb.left + 10,
+                        draw_bomb.top + 10
+                );;
+            }
             struct Position shot_middle;
 
             shot_middle.x = (draw_shot.left + draw_shot.left + 20)/2;
@@ -127,6 +143,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                     right,
                                     bottom
                             );
+
                             if (bottom >= 600){
                                 gameover(hwnd);
                             }
@@ -199,6 +216,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         shot_y = 590;
                         shot = FALSE;
                     }
+                    if (bomb == TRUE){
+                        bomb_y = bomb_y + 10;
+                        InvalidateRect(hwnd, 0, 1);
+                    }
+                    if (bomb_y >= 600){
+                        bomb = FALSE;
+                        bomb_y = 0;
+                    }
                 case 1:
                     if (start == TRUE){
                         if (alien_x >= 60){
@@ -213,6 +238,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                             alien_x = alien_x - 1;
                         }
                         InvalidateRect(hwnd, 0, 1);
+                    }
+                case 2:
+                    if (start == TRUE){
+                        bomb_x = 60;
+                        bomb = TRUE;
+                        InvalidateRect(hwnd, 0, 1);
+
                     }
             }
 
@@ -279,6 +311,7 @@ int main()
 
     SetTimer(hwnd, 0, 15, 0);
     SetTimer(hwnd, 1, 200, 0);
+
 
     // Step 3: The Message Loop
     while(GetMessage(&Msg, NULL, 0, 0) > 0)
