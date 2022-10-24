@@ -17,7 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit">
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="added score counter to not fight with stdio library">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -92,7 +92,10 @@
       <workItem from="1666540343562" duration="3055000" />
       <workItem from="1666610601822" duration="1166000" />
       <workItem from="1666612475694" duration="22000" />
-      <workItem from="1666613641446" duration="1692000" />
+      <workItem from="1666613641446" duration="1810000" />
+      <workItem from="1666615684257" duration="18000" />
+      <workItem from="1666615847280" duration="26000" />
+      <workItem from="1666616315888" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -227,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666611168987</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added score counter to not fight with stdio library">
+      <created>1666615444407</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666615444407</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +268,7 @@
     <MESSAGE value="fixed issue and aliens disappear correctly, had an issue with sizeof function as i didn't realise it returns size in bytes rather than indexes, all fixed now. Only thing left is a score and some text included." />
     <MESSAGE value="implemented a game over state with a window that pops up when the aliens touch the ship. technically finished, but needs buttoning up and cleaing." />
     <MESSAGE value="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit" />
-    <option name="LAST_COMMIT_MESSAGE" value="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit" />
+    <MESSAGE value="added score counter to not fight with stdio library" />
+    <option name="LAST_COMMIT_MESSAGE" value="added score counter to not fight with stdio library" />
   </component>
 </project>

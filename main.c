@@ -53,8 +53,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             rect.top=10;
             DrawText(device, "Score:", -1, &rect, DT_SINGLELINE | DT_NOCLIP  ) ;
 
-            wchar_t str[32];
-            itoa(score, str, 10);
+            char str[32];
+            _itoa(score, str, 10);
 
             RECT rect1;
             rect1.left=60;
