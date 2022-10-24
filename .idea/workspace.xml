@@ -17,10 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="fixed compile error with crinkler, whole project compiles to 1.5 kb so will impliment a repeating game play aspect.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="game now repeats, looking to add projectiles from aliens, but might be a faff" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +92,7 @@
       <workItem from="1666613641446" duration="1810000" />
       <workItem from="1666615684257" duration="18000" />
       <workItem from="1666615847280" duration="26000" />
-      <workItem from="1666616315888" duration="2956000" />
+      <workItem from="1666616315888" duration="3334000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -244,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666616412284</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="game now repeats, looking to add projectiles from aliens, but might be a faff">
+      <created>1666620691390</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1666620691390</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +281,7 @@
     <MESSAGE value="game technically finished, want to add a feature where the game restarts when you clear the board, but will need to check size limit" />
     <MESSAGE value="added score counter to not fight with stdio library" />
     <MESSAGE value="fixed compile error with crinkler, whole project compiles to 1.5 kb so will impliment a repeating game play aspect." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed compile error with crinkler, whole project compiles to 1.5 kb so will impliment a repeating game play aspect." />
+    <MESSAGE value="game now repeats, looking to add projectiles from aliens, but might be a faff" />
+    <option name="LAST_COMMIT_MESSAGE" value="game now repeats, looking to add projectiles from aliens, but might be a faff" />
   </component>
 </project>

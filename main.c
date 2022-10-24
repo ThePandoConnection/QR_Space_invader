@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <stdio.h>
+
 struct Position{
     int x;
     int y;
@@ -137,7 +137,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                                 }
                                 deadAliens[x].x = i;
                                 deadAliens[x].y = j;
-                                printf("%d", score);
                                 if (score % 280 == 0) {
                                     alien_y = 0;
                                     for (int k; k <28; k++){
