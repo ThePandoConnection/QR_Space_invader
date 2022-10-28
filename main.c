@@ -30,6 +30,10 @@ void gameover(HWND hwnd){
     }
 }
 
+int bomb_rand(){
+    return rand() % 450;
+}
+
 BOOL AlienDead(struct Position dead){
         int check = 0;
         for (int i=0; i < 28; i++) {
@@ -108,6 +112,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             draw_bomb.left = bomb_x;
             draw_bomb.top = bomb_y;
 
+            struct Position bomb_middle;
+
+            bomb_middle.x = (draw_bomb.left + draw_bomb.left + 10)/2;
+            bomb_middle.y = (draw_bomb.top + draw_bomb.top + 10)/2;
+
             if (bomb == TRUE){
                 Rectangle(
                         device,
@@ -115,7 +124,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         draw_bomb.top,
                         draw_bomb.left + 10,
                         draw_bomb.top + 10
-                );;
+                );
+                if (bomb_middle.x > draw_ship.left && bomb_middle.x < draw_ship.right && bomb_middle.y > 600 &&  bomb_middle.y < 650){
+                    gameover(hwnd);
+                }
             }
             struct Position shot_middle;
 
@@ -216,14 +228,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         shot_y = 590;
                         shot = FALSE;
                     }
-                    if (bomb == TRUE){
-                        bomb_y = bomb_y + 10;
-                        InvalidateRect(hwnd, 0, 1);
-                    }
-                    if (bomb_y >= 600){
-                        bomb = FALSE;
-                        bomb_y = 0;
-                    }
+
                 case 1:
                     if (start == TRUE){
                         if (alien_x >= 60){
@@ -241,8 +246,16 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     }
                 case 2:
                     if (start == TRUE){
-                        bomb_x = 60;
                         bomb = TRUE;
+                        if (bomb == TRUE){
+                            bomb_y = bomb_y + 3;
+                            InvalidateRect(hwnd, 0, 1);
+                        }
+                        if (bomb_y >= 600){
+                            bomb = FALSE;
+                            bomb_x = bomb_rand();
+                            bomb_y = 0;
+                        }
                         InvalidateRect(hwnd, 0, 1);
 
                     }
@@ -311,6 +324,7 @@ int main()
 
     SetTimer(hwnd, 0, 15, 0);
     SetTimer(hwnd, 1, 200, 0);
+    SetTimer(hwnd, 2, 500, 0);
 
 
     // Step 3: The Message Loop

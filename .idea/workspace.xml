@@ -17,7 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="game now repeats, looking to add projectiles from aliens, but might be a faff">
+    <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="sort of added bombs, having trouble choosing a random x coord, need to take a break.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -46,16 +46,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ollie Lewis/CLionProjects/MATTKCQRSNAKE&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/Ollie Lewis/Github_Repo/QR_invader"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="QR_invader" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="QR_invader" TARGET_NAME="QR_invader" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QR_invader" RUN_TARGET_NAME="QR_invader">
       <method v="2">
@@ -95,7 +95,9 @@
       <workItem from="1666613641446" duration="1810000" />
       <workItem from="1666615684257" duration="18000" />
       <workItem from="1666615847280" duration="26000" />
-      <workItem from="1666616315888" duration="8416000" />
+      <workItem from="1666616315888" duration="8813000" />
+      <workItem from="1666864290964" duration="91000" />
+      <workItem from="1666965039006" duration="802000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -258,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666625874374</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="sort of added bombs, having trouble choosing a random x coord, need to take a break.">
+      <created>1666630728349</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1666630728349</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +301,7 @@
     <MESSAGE value="added score counter to not fight with stdio library" />
     <MESSAGE value="fixed compile error with crinkler, whole project compiles to 1.5 kb so will impliment a repeating game play aspect." />
     <MESSAGE value="game now repeats, looking to add projectiles from aliens, but might be a faff" />
-    <option name="LAST_COMMIT_MESSAGE" value="game now repeats, looking to add projectiles from aliens, but might be a faff" />
+    <MESSAGE value="sort of added bombs, having trouble choosing a random x coord, need to take a break." />
+    <option name="LAST_COMMIT_MESSAGE" value="sort of added bombs, having trouble choosing a random x coord, need to take a break." />
   </component>
 </project>
