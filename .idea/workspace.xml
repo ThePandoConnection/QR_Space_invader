@@ -19,8 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="666b2d8b-dafb-45d6-a39b-e4e4d1cd010b" name="Changes" comment="made bombs random, game complete. There is room for more features, but I am happy at the minute with it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +97,8 @@
       <workItem from="1666616315888" duration="8813000" />
       <workItem from="1666864290964" duration="91000" />
       <workItem from="1666965039006" duration="917000" />
-      <workItem from="1666966189756" duration="1000" />
+      <workItem from="1666966189756" duration="79000" />
+      <workItem from="1666970931527" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="added turret and working on shooting mechanism">
       <created>1665921390888</created>
@@ -276,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666965931111</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="made bombs random, game complete. There is room for more features, but I am happy at the minute with it.">
+      <created>1666966241548</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1666966241548</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
