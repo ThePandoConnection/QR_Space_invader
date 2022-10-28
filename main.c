@@ -274,8 +274,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-//int _WinMainCRTStartup()
-int main()
+//int _WinMainCRTStartup() //<--- for compiling
+int main() //<--- for testing
 {
 
     HMODULE hInstance = GetModuleHandleA(NULL);
