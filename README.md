@@ -14,7 +14,7 @@ To run: <br/>
 For your own projects:
 
 command to compile:
-gcc -c main.c
+gcc -c main.c <br/>
 crinkler /ENTRY:_WinMainCRTStartup /SUBSYSTEM:WINDOWS main.o  kernel32.lib user32.lib gdi32.lib
 
 (please rename main() to _WinMainCRTStartup)
